@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>Get Balance</h2>
+    <form method="post" action="/getBalance">
+      <input type="text" name="address"/>
+      <input type="submit"/>
+    </form>
+    <h2>Send Balance</h2>    
+    <form method="post" action="/sendBalance">
+      <input type="text" name="fromAddress"/>
+      <input type="text" name="toAddress"/>
+      <input type="text" name="balance"/>
+      <input type="submit"/>
+    </form>
+    <h3>Balance:<%= balanceData %> </h3>
+    <h2>Call a Smart Contract</h2>
+    <form method="post" action="/callContract">
+    <textarea name="ABI"></textarea> 
+    <input type="text" name="Deployed_URL"/>
+    <input type="submit"/>
+    </form>
+    <h3>Result:<%= totalBalance %></h3>
+
+    <h2>Select Winner Contract</h2>
+    <form method="post" action="/selectWInner">
+    <input type="submit"/>
+    </form>
+    <h2>Select Manager</h2>
+    <form method="post" action="/Manager">
+    <input type="submit"/>
+    </form>
+  </body>
+</html>
